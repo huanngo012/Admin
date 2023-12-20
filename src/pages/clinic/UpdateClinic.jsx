@@ -128,7 +128,7 @@ const UpdateClinic = ({ data }) => {
       ...payload,
       descriptionImgAdd,
       descriptionImgDelete,
-      image: preview?.image?.includes("http") ? undefined : preview?.image,
+      image: preview?.image?.includes("http://") ? undefined : preview?.image,
     };
 
     id &&

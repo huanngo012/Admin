@@ -169,7 +169,7 @@ const NewBooking = () => {
         }}
       >
         <Box sx={{ display: "flex", padding: "10px" }}>
-          <Typography variant="h5">{t("doctor.add-doctor")}</Typography>
+          <Typography variant="h5">{t("booking.booking")}</Typography>
         </Box>
         <Box
           sx={{

@@ -63,12 +63,7 @@ const UpdateUser = ({ data }) => {
       <Button variant="contained" color="green" onClick={handleClickOpen}>
         <Typography variant="button1"> {t("update")}</Typography>
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        fullWidth={true}
-        maxWidth={"md"}
-      >
+      <Dialog open={open} onClose={handleClose} maxWidth={"md"}>
         <DialogTitle>{t("update-infomation")}</DialogTitle>
         <DialogContent>
           <Box sx={{ display: "flex", padding: "10px", margin: "20px" }}>
@@ -79,6 +74,7 @@ const UpdateUser = ({ data }) => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
+                  height: "100%",
                 }}
               >
                 <img

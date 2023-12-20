@@ -92,6 +92,7 @@
     "add-schedule": "Thêm lịch khám mới"
   },
   "booking": {
+    "booking": "Đặt lịch",
     "name-patient": "Tên bệnh nhân",
     "description-img": "Ảnh mô tả",
     "payment": "Thanh toán",

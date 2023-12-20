@@ -456,9 +456,7 @@ export const clinicColumns = [
               objectFit: "cover",
               marginRight: "20px",
             }}
-            src={
-              params.row.clinicImg ? params.row.clinicImg : icons.hospitalImage
-            }
+            src={params.row.image ? params.row.image : icons.hospitalImage}
             alt="avatar"
           />
           <Typography variant="body2">{text}</Typography>
@@ -666,6 +664,7 @@ export const specialtyColumns = [
         <Typography
           variant="body2"
           dangerouslySetInnerHTML={{ __html: text }}
+          className="truncate"
         />
       );
     },

@@ -48,7 +48,7 @@ export default function Sidebar() {
           icon: icons.timeDoctor,
         },
         {
-          name: t("doctor-appointment-schedule"),
+          name: t("patient-appointment-schedule"),
           path: "bookings",
           icon: icons.timePatient,
         },

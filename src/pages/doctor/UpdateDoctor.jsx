@@ -81,12 +81,7 @@ const UpdateDoctor = ({ data }) => {
       <Button variant="contained" color="green" onClick={handleClickOpen}>
         <Typography variant="button1"> {t("update")}</Typography>
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        fullWidth={true}
-        maxWidth={"md"}
-      >
+      <Dialog open={open} onClose={handleClose} maxWidth={"md"}>
         <DialogTitle>{t("update-infomation")}</DialogTitle>
         <DialogContent>
           <Box

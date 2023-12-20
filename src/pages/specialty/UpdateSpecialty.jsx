@@ -62,17 +62,12 @@ const UpdateSpecialty = ({ data }) => {
       <Button variant="contained" color="green" onClick={handleClickOpen}>
         <Typography variant="button1"> {t("update")}</Typography>
       </Button>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        fullWidth={true}
-        maxWidth={"md"}
-      >
+      <Dialog open={open} onClose={handleClose} maxWidth={"md"}>
         <DialogTitle>{t("update-infomation")}</DialogTitle>
         <DialogContent>
-          <Box sx={{ display: "flex", padding: "10px", margin: "20px" }}>
+          <Grid item sx={{ display: "flex", justifyContent: "space-between" }}>
             <Grid
-              mobile={6}
+              mobile={5}
               sx={{
                 display: "flex",
                 justifyContent: "center",
@@ -110,7 +105,7 @@ const UpdateSpecialty = ({ data }) => {
                 />
               </Box>
             </Grid>
-            <Grid mobile={6}>
+            <Grid mobile={7}>
               <Box>
                 <Box sx={{ display: "flex", gap: "20px", marginX: "28px" }}>
                   <Stack
@@ -121,8 +116,8 @@ const UpdateSpecialty = ({ data }) => {
                   >
                     <Stack width="100%" spacing="8px" direction="row">
                       <InputField
-                        label={t("hospital.name")}
-                        placeholder={t("hospital.name")}
+                        label={t("specialty.name")}
+                        placeholder={t("specialty.name")}
                         style={{
                           width: "45%",
                         }}
@@ -153,7 +148,7 @@ const UpdateSpecialty = ({ data }) => {
                 </Box>
               </Box>
             </Grid>
-          </Box>
+          </Grid>
         </DialogContent>
         <DialogActions sx={{ padding: "16px" }}>
           <Button variant="contained" color="green" onClick={handleSubmit}>
