@@ -36,6 +36,7 @@ const NewSchedule = () => {
 
   const [payload, setPayload] = useState({
     timeType: times?.map((el) => ({ ...el, isSelected: false })),
+    date: new Date().getTime(),
   });
   const [displayText, setDisplayText] = useState("");
 

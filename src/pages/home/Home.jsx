@@ -69,7 +69,7 @@ const Home = () => {
   return (
     <Helmet title="Trang chủ">
       <Grid container>
-        <Stack direction={isTablet ? "row" : "column"} spacing="16px">
+        {/* <Stack direction={isTablet ? "row" : "column"} spacing="16px">
           <Card
             sx={{
               width: {
@@ -150,7 +150,7 @@ const Home = () => {
               />
             </CardContent>
           </Card>
-        </Stack>
+        </Stack> */}
       </Grid>
     </Helmet>
   );

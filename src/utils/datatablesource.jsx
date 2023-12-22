@@ -578,7 +578,7 @@ export const clinicColumns = [
       let text = params.value;
       return (
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography variant="body2">{`${text.fullName} (${text.email})`}</Typography>
+          <Typography variant="body2">{`${text?.fullName} (${text?.email})`}</Typography>
         </Box>
       );
     },

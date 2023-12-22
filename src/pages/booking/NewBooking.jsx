@@ -12,11 +12,11 @@ import {
   CircularProgress,
 } from "@mui/material";
 import * as apis from "../../apis";
-import { resetUserStatus } from "../../store/users/userSlice";
 import { times } from "../../utils/contants";
 import { addBooking } from "../../store/booking/asyncAction";
 import icons from "../../utils/icons";
 import { getBase64 } from "../../utils/helper";
+import { resetBookingStatus } from "../../store/booking/bookingSlice";
 
 const NewBooking = () => {
   const { DriveFolderUploadOutlinedIcon } = icons;
@@ -35,7 +35,9 @@ const NewBooking = () => {
   const [patients, setPatients] = useState([]);
   const [schedule, setSchedule] = useState([]);
 
-  const [payload, setPayload] = useState({});
+  const [payload, setPayload] = useState({
+    date: new Date().getTime(),
+  });
   const [hoverElm, setHoverElm] = useState(null);
   const [images, setImages] = useState([]);
 
@@ -143,7 +145,7 @@ const NewBooking = () => {
         severity: successAction ? "success" : "error",
         title: successAction ? t("success") : t("failed"),
       });
-      dispatch(resetUserStatus());
+      dispatch(resetBookingStatus());
     }
   }, [successAction, errorAction]);
 

@@ -70,6 +70,7 @@ const ListDoctors = () => {
         })
     );
   }, [totalItem, doctors]);
+  console.log(rows);
 
   const actionColumn = [
     {
