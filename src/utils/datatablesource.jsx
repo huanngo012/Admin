@@ -2,19 +2,21 @@ import icons from "./icons";
 import { roleName, times } from "./contants";
 import { Typography, Box, Select, MenuItem, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
-import { CustomSelect, EmptyPage } from "../components";
+import { EmptyPage } from "../components";
 
 export const userColumns = [
   {
     field: "idRow",
     headerName: "id",
-    flex: 0.5,
-    headerClassName: "custom-header",
+    width: 120,
+    headerAlign: "center",
+    align: "center",
+
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -29,14 +31,12 @@ export const userColumns = [
     field: "fullName",
     headerName: "user.fullname",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -44,7 +44,10 @@ export const userColumns = [
     renderCell: (params) => {
       let text = params.value;
       return (
-        <Box sx={{ display: "flex", alignItems: "center" }}>
+        <Box
+          sx={{ display: "flex", alignItems: "center" }}
+          className="truncate_1"
+        >
           <img
             style={{
               width: "32px",
@@ -62,7 +65,9 @@ export const userColumns = [
             }
             alt="avatar"
           />
-          <Typography variant="body2">{text}</Typography>
+          <Typography variant="body2" className="truncate_2">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -72,20 +77,26 @@ export const userColumns = [
     headerName: "user.email",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
       let text = params.value;
-      return <Typography variant="body2">{text}</Typography>;
+      return (
+        <Typography
+          variant="body2"
+          className="truncate_1"
+          sx={{ display: "block" }}
+        >
+          {text}
+        </Typography>
+      );
     },
   },
   {
@@ -93,13 +104,11 @@ export const userColumns = [
     headerName: "user.phone",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -114,20 +123,22 @@ export const userColumns = [
     headerName: "user.address",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
       let text = params.value;
-      return <Typography variant="body2">{text}</Typography>;
+      return (
+        <Typography variant="body2" className="truncate_1">
+          {text}
+        </Typography>
+      );
     },
   },
   {
@@ -135,13 +146,11 @@ export const userColumns = [
     headerName: "user.gender",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -160,13 +169,11 @@ export const userColumns = [
     headerName: "user.role",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -185,13 +192,11 @@ export const userColumns = [
     headerName: "user.status",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -221,13 +226,15 @@ export const doctorColumns = [
   {
     field: "idRow",
     headerName: "id",
-    flex: 0.5,
-    headerClassName: "custom-header",
+    width: 120,
+    headerAlign: "center",
+    align: "center",
+
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -235,7 +242,11 @@ export const doctorColumns = [
     renderCell: (params) => {
       let text = params.value;
 
-      return <Typography variant="label1">{text}</Typography>;
+      return (
+        <Typography variant="label1" className="truncate_1">
+          {text}
+        </Typography>
+      );
     },
   },
 
@@ -243,14 +254,12 @@ export const doctorColumns = [
     field: "fullName",
     headerName: "doctor.name",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -276,7 +285,9 @@ export const doctorColumns = [
             }
             alt="avatar"
           />
-          <Typography variant="body2">{text}</Typography>
+          <Typography variant="body2" className="truncate_2">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -286,20 +297,26 @@ export const doctorColumns = [
     headerName: "user.email",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
       let text = params.value;
-      return <Typography variant="body2">{text}</Typography>;
+      return (
+        <Typography
+          variant="body2"
+          className="truncate_1"
+          sx={{ display: "block" }}
+        >
+          {text}
+        </Typography>
+      );
     },
   },
   {
@@ -307,13 +324,11 @@ export const doctorColumns = [
     headerName: "user.phone",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -327,14 +342,12 @@ export const doctorColumns = [
     field: "clinicName",
     headerName: "hospital.name",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -356,7 +369,9 @@ export const doctorColumns = [
             }
             alt="avatar"
           />
-          <Typography variant="body2">{text}</Typography>
+          <Typography variant="body2" className="truncate_2">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -366,13 +381,11 @@ export const doctorColumns = [
     headerName: "hospital.address",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -380,7 +393,11 @@ export const doctorColumns = [
     renderCell: (params) => {
       let text = params.value;
 
-      return <Typography variant="body2">{text}</Typography>;
+      return (
+        <Typography variant="body2" className="truncate_2">
+          {text}
+        </Typography>
+      );
     },
   },
   {
@@ -388,20 +405,22 @@ export const doctorColumns = [
     headerName: "specialty.name",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
       let text = params.value;
-      return <Typography variant="body2">{text}</Typography>;
+      return (
+        <Typography variant="body2" className="truncate_1">
+          {text}
+        </Typography>
+      );
     },
   },
 ];
@@ -410,13 +429,15 @@ export const clinicColumns = [
   {
     field: "idRow",
     headerName: "id",
-    flex: 0.5,
-    headerClassName: "custom-header",
+    width: 120,
+    align: "center",
+    headerAlign: "center",
+
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -432,14 +453,12 @@ export const clinicColumns = [
     field: "name",
     headerName: "hospital.name",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -459,7 +478,9 @@ export const clinicColumns = [
             src={params.row.image ? params.row.image : icons.hospitalImage}
             alt="avatar"
           />
-          <Typography variant="body2">{text}</Typography>
+          <Typography variant="body2" className="truncate_2">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -470,13 +491,11 @@ export const clinicColumns = [
     headerName: "hospital.address",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -488,7 +507,10 @@ export const clinicColumns = [
       const province = params.row.province ? `${params.row.province}` : "";
 
       return (
-        <Typography variant="body2">{`${detail}${ward}${district}${province}`}</Typography>
+        <Typography
+          variant="body2"
+          className="truncate_2"
+        >{`${detail}${ward}${district}${province}`}</Typography>
       );
     },
   },
@@ -497,13 +519,11 @@ export const clinicColumns = [
     headerName: "specialty.list",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -512,7 +532,7 @@ export const clinicColumns = [
       const { t } = useTranslation();
       const specialtys = params.value;
       return (
-        <Select size="small" displayEmpty value="">
+        <Select size="small" displayEmpty value="" sx={{ width: "100%" }}>
           <MenuItem value="" sx={{ display: "none" }}>
             <Box
               sx={{
@@ -521,7 +541,9 @@ export const clinicColumns = [
                 width: "100%",
               }}
             >
-              <Typography variant="body2">{t("specialty.list")}</Typography>
+              <Typography variant="body2" className="truncate_1">
+                {t("specialty.list")}
+              </Typography>
             </Box>
           </MenuItem>
           {specialtys.length > 0 ? (
@@ -562,14 +584,12 @@ export const clinicColumns = [
     field: "host",
     headerName: "hospital.host",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -578,7 +598,10 @@ export const clinicColumns = [
       let text = params.value;
       return (
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography variant="body2">{`${text?.fullName} (${text?.email})`}</Typography>
+          <Typography
+            variant="body2"
+            className="truncate_2"
+          >{`${text?.fullName} (${text?.email})`}</Typography>
         </Box>
       );
     },
@@ -589,13 +612,15 @@ export const specialtyColumns = [
   {
     field: "idRow",
     headerName: "id",
-    with: 50,
-    headerClassName: "custom-header",
+    width: 120,
+    headerAlign: "center",
+    align: "center",
+
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -611,14 +636,12 @@ export const specialtyColumns = [
     field: "name",
     headerName: "specialty.name",
     flex: 0.5,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -638,7 +661,10 @@ export const specialtyColumns = [
             src={params.row.image ? params.row.image : icons.specialty}
             alt="avatar"
           />
-          <Typography variant="body2">{text}</Typography>
+
+          <Typography variant="body2" className="truncate_1">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -647,13 +673,12 @@ export const specialtyColumns = [
     field: "description",
     headerName: "description",
     flex: 1,
-    headerClassName: "custom-header",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -664,7 +689,7 @@ export const specialtyColumns = [
         <Typography
           variant="body2"
           dangerouslySetInnerHTML={{ __html: text }}
-          className="truncate"
+          className="truncate_2"
         />
       );
     },
@@ -674,13 +699,15 @@ export const scheduleColumns = [
   {
     field: "idRow",
     headerName: "id",
-    flex: 0.5,
-    headerClassName: "custom-header",
+    width: 120,
+    align: "center",
+    headerAlign: "center",
+
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -696,14 +723,12 @@ export const scheduleColumns = [
     field: "fullName",
     headerName: "doctor.name",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -729,7 +754,9 @@ export const scheduleColumns = [
             }
             alt="avatar"
           />
-          <Typography variant="body2">{text}</Typography>
+          <Typography variant="body2" className="truncate_2">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -739,34 +766,38 @@ export const scheduleColumns = [
     headerName: "user.email",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
       let text = params.value;
-      return <Typography variant="body2">{text}</Typography>;
+      return (
+        <Typography
+          variant="body2"
+          className="truncate_2"
+          sx={{ display: "block" }}
+        >
+          {text}
+        </Typography>
+      );
     },
   },
   {
     field: "clinicName",
     headerName: "hospital.name",
     flex: 1,
-    headerClassName: "custom-header",
-    cellClassName: "card--cell",
 
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -775,7 +806,9 @@ export const scheduleColumns = [
       let text = params.value;
       return (
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography variant="body2">{text}</Typography>
+          <Typography variant="body2" className="truncate_2">
+            {text}
+          </Typography>
         </Box>
       );
     },
@@ -785,13 +818,11 @@ export const scheduleColumns = [
     headerName: "specialty.name",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -806,13 +837,11 @@ export const scheduleColumns = [
     headerName: "schedule.date",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -828,13 +857,11 @@ export const scheduleColumns = [
     headerName: "schedule.time",
     flex: 1,
 
-    headerClassName: "custom-header",
-
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -897,133 +924,133 @@ export const scheduleColumns = [
 export const bookingColumns = [
   {
     field: "idRow",
-    headerName: "ID",
-    width: 70,
-    headerAlign: "center",
+    headerName: "id",
+    width: 120,
     align: "center",
+    headerAlign: "center",
+
+    renderHeader(params) {
+      const { t } = useTranslation();
+      let headerName = params.colDef.headerName;
+      return (
+        <Typography variant="label1" color="var(--text-primary)">
+          {t(headerName)}
+        </Typography>
+      );
+    },
   },
   {
     field: "fullName",
     headerName: "booking.name-patient",
-    width: 200,
+    flex: 1,
     headerAlign: "center",
     align: "center",
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
-      return (
-        <div className="flex items-center">
-          {params.row.avatar ? (
-            <>
-              <img
-                className="w-8 h-8 rounded-full object-cover mr-5"
-                src={params.row.avatar}
-                alt="image"
-              />
-              {params.row.fullName}
-            </>
-          ) : (
-            <>{params.row.fullName}</>
-          )}
-        </div>
-      );
+      let text = params.value;
+      return <Typography variant="body2">{text}</Typography>;
     },
   },
   {
     field: "mobile",
     headerName: "user.phone",
-    width: 100,
+    flex: 1,
     headerAlign: "center",
     align: "center",
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
+    },
+    renderCell: (params) => {
+      let text = params.value;
+      return <Typography variant="body2">{text}</Typography>;
     },
   },
   {
     field: "nameDoctor",
     headerName: "doctor.name",
-    width: 200,
+    flex: 1,
     headerAlign: "center",
     align: "center",
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
+    },
+    renderCell: (params) => {
+      let text = params.value;
+      return <Typography variant="body2">{text}</Typography>;
     },
   },
   {
     field: "date",
     headerName: "schedule.date",
-    width: 150,
+    flex: 1,
     headerAlign: "center",
     align: "center",
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
+    },
+    renderCell: (params) => {
+      let text = params.value;
+      return <Typography variant="body2">{text}</Typography>;
     },
   },
 
   {
     field: "time",
     headerName: "schedule.time",
-    width: 150,
+    flex: 1,
     headerAlign: "center",
     align: "center",
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
     },
     renderCell: (params) => {
-      return (
-        <div className="flex items-center justify-center">
-          <span
-            className={`border border-solid border-black py-2 px-4 cursor-pointer rounded-md bg-orange-500
-            `}
-          >
-            {params.row.time}
-          </span>
-        </div>
-      );
+      let text = params.value;
+      return <Typography variant="body2">{text}</Typography>;
     },
   },
   {
     field: "status",
     headerName: "user.status",
-    width: 150,
+    flex: 1,
     headerAlign: "center",
     align: "center",
     renderHeader(params) {
       const { t } = useTranslation();
       let headerName = params.colDef.headerName;
       return (
-        <Typography variant="label3" color="var(--text-primary)">
+        <Typography variant="label1" color="var(--text-primary)">
           {t(headerName)}
         </Typography>
       );
@@ -1033,8 +1060,11 @@ export const bookingColumns = [
       return (
         <Box
           sx={{
+            display: "flex",
+            justifyContent: "center",
             borderRadius: "6px",
-            padding: "6px",
+            padding: "12px 6px",
+            width: "100px",
             backgroundColor: `${
               text === "Đã hủy"
                 ? "var(--red-100)"
@@ -1059,7 +1089,7 @@ export const bookingColumns = [
             }`,
           }}
         >
-          {params.row.status}
+          <Typography variant="body2"> {text}</Typography>
         </Box>
       );
     },

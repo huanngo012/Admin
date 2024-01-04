@@ -94,7 +94,7 @@ const NewBooking = () => {
     }
   };
   const fetchApiScheduleByDate = async () => {
-    if (payload?.date) {
+    if (payload?.date && payload?.doctorID) {
       const response = await apis.apiGetAllSchedules({
         doctorID: payload?.doctorID,
         date: payload?.date,
@@ -138,6 +138,8 @@ const NewBooking = () => {
   useEffect(() => {
     if (successAction || errorAction) {
       if (successAction) {
+        const { scheduleID, time, patientID, ...data } = payload;
+
         setPayload({});
       }
       displayNotification({

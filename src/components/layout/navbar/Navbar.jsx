@@ -75,7 +75,6 @@ const Navbar = () => {
                 </IconButton>
                 <Typography
                   variant="h6"
-                  noWrap
                   component="div"
                   sx={{ display: { xs: "none", sm: "block" } }}
                 >

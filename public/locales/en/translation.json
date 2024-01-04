@@ -104,5 +104,10 @@
     "not-exist": "Sorry, the page you are looking for does not exist",
     "back-home-page": "Back to home page",
     "return": "Return"
+  },
+  "notification": {
+    "notification": "Notification",
+    "notification-read": "You've read all notifications",
+    "click-tab-read": "You can review old notifications in the read section."
   }
 }

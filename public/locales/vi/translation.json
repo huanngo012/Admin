@@ -104,5 +104,10 @@
     "not-exist": "Xin lỗi trang bạn muốn tìm không tồn tại",
     "back-home-page": "Về trang chủ",
     "return": "Quay trở lại"
+  },
+  "notification": {
+    "notification": "Thông báo",
+    "notification-read": "Bạn đã đọc hết thông báo",
+    "click-tab-read": "Bạn có thể xem lại thông báo cũ trong mục đã đọc"
   }
 }

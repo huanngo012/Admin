@@ -3,7 +3,6 @@ import "./style.scss";
 import {
   Badge,
   Box,
-  Button,
   ClickAwayListener,
   Divider,
   MenuItem,
@@ -15,10 +14,10 @@ import {
 } from "@mui/material";
 import React, { useState } from "react";
 
-import { Link } from "react-router-dom";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import { useTranslation } from "react-i18next";
 import icons from "../../../utils/icons";
+import EmptyPage from "../../emptyPage/EmptyPage";
 
 const NotiPopUp = () => {
   const { t } = useTranslation();
@@ -32,6 +31,8 @@ const NotiPopUp = () => {
   const handleCloseNoti = () => {
     setOpenNoti(false);
   };
+
+  const value = null;
 
   return (
     <Badge
@@ -68,60 +69,49 @@ const NotiPopUp = () => {
                 <Typography variant="label1">
                   {t("notification.notification")}
                 </Typography>
-                <Box
-                  sx={{
-                    padding: "4px 12px",
-                    borderRadius: "50px",
-                    bgcolor: "var(--blue-60)",
-                  }}
-                >
-                  <Typography variant="caption3" color={"var(--blue-600)"}>
-                    3 {t("new")}
-                  </Typography>
-                </Box>
               </Stack>
 
               <Divider sx={{ mb: "10px" }} />
 
-              <MenuItem onClick={handleCloseNoti}>
-                <Stack
-                  direction="row"
-                  alignItems={"center"}
-                  justifyContent={"space-between"}
-                  width={"100%"}
-                >
-                  <Stack direction="row" spacing={1} alignItems={"center"}>
-                    <img
-                      src={icons.usa}
-                      alt=""
-                      width={32}
-                      height={32}
-                      style={{ borderRadius: "4px" }}
-                    />
-                    <Box>
-                      <Typography variant="label2">Tên thiết bị</Typography>
+              {!value ? (
+                <EmptyPage title={t("notification.notification-read")} />
+              ) : (
+                <MenuItem onClick={handleCloseNoti}>
+                  <Stack
+                    direction="row"
+                    alignItems={"center"}
+                    justifyContent={"space-between"}
+                    width={"100%"}
+                  >
+                    <Stack direction="row" spacing={1} alignItems={"center"}>
+                      <img
+                        src={icons.usa}
+                        alt=""
+                        width={32}
+                        height={32}
+                        style={{ borderRadius: "4px" }}
+                      />
+                      <Box>
+                        <Typography variant="label2">Tên thiết bị</Typography>
+                        <Typography
+                          variant="body3"
+                          color={"var(--text-secondary)"}
+                        >
+                          Tên lỗi
+                        </Typography>
+                      </Box>
+                    </Stack>
+                    <Box width={"70px"}>
                       <Typography
                         variant="body3"
                         color={"var(--text-secondary)"}
                       >
-                        Tên lỗi
+                        Hôm qua
                       </Typography>
                     </Box>
                   </Stack>
-                  <Box width={"70px"}>
-                    <Typography variant="body3" color={"var(--text-secondary)"}>
-                      Hôm qua
-                    </Typography>
-                  </Box>
-                </Stack>
-              </MenuItem>
-              <Box p={2}>
-                <Link to="/notification">
-                  <Button fullWidth variant="outlined">
-                    {t("view-all")}
-                  </Button>
-                </Link>
-              </Box>
+                </MenuItem>
+              )}
             </MenuList>
           </Paper>
         </ClickAwayListener>

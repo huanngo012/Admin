@@ -65,7 +65,7 @@ const ListUsers = () => {
       renderHeader(params) {
         let headerName = params.colDef.headerName;
         return (
-          <Typography variant="label3" color="var(--text-primary)">
+          <Typography variant="label1" color="var(--text-primary)">
             {headerName}
           </Typography>
         );
@@ -120,7 +120,7 @@ const ListUsers = () => {
 
   return (
     <Helmet title={t("specialty.list")}>
-      <Grid container sx={{ padding: "0px 32px" }}>
+      <Grid container sx={{ padding: "0px 32px" }} height="100%">
         <Box
           className="card-data-header"
           sx={{

@@ -123,12 +123,7 @@ const CardNotifySkeleton = ({ customKey }) => {
 
   return (
     <div key={customKey} className="custom-skeleton">
-      <DataGridMain
-        columns={columns}
-        rows={rows}
-        pagination={false}
-        height={185}
-      />
+      <DataGridMain columns={columns} rows={rows} pagination={false} />
     </div>
   );
 };

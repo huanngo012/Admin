@@ -27,7 +27,7 @@ const ListBookings = () => {
 
   const { displayNotification } = useNotification();
 
-  const pageSizeDefault = 5;
+  const pageSizeDefault = 10;
   const [pageSize, setPageSize] = useState(pageSizeDefault);
   const [page, setPage] = useState(1);
   const [rows, setRows] = useState([]);
@@ -72,14 +72,21 @@ const ListBookings = () => {
       renderHeader(params) {
         let headerName = params.colDef.headerName;
         return (
-          <Typography variant="label3" color="var(--text-primary)">
+          <Typography variant="label1" color="var(--text-primary)">
             {headerName}
           </Typography>
         );
       },
       renderCell: (params) => {
         return (
-          <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "15px",
+              whiteSpace: "nowrap !important",
+            }}
+          >
             <UpdateBooking data={params.row} />
             <Button
               variant="contained"
@@ -128,7 +135,7 @@ const ListBookings = () => {
 
   return (
     <Helmet title={t("doctor.list")}>
-      <Grid container sx={{ padding: "0px 32px" }}>
+      <Grid container sx={{ padding: "0px 32px", height: "100%" }}>
         <Box
           className="card-data-header"
           sx={{

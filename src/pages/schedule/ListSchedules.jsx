@@ -79,14 +79,21 @@ const ListSchedules = () => {
       renderHeader(params) {
         let headerName = params.colDef.headerName;
         return (
-          <Typography variant="label3" color="var(--text-primary)">
+          <Typography variant="label1" color="var(--text-primary)">
             {headerName}
           </Typography>
         );
       },
       renderCell: (params) => {
         return (
-          <Box sx={{ display: "flex", alignItems: "center", gap: "15px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: "15px",
+              whiteSpace: "nowrap !important",
+            }}
+          >
             <UpdateSchedule data={params.row} />
             <Button
               variant="contained"
@@ -133,7 +140,7 @@ const ListSchedules = () => {
   }, [successAction, errorAction]);
   return (
     <Helmet title={t("doctor.list")}>
-      <Grid container sx={{ padding: "0px 32px" }}>
+      <Grid container sx={{ padding: "0px 32px", height: "100%" }}>
         <Box
           className="card-data-header"
           sx={{

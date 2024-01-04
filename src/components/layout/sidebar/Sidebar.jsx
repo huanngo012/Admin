@@ -137,7 +137,13 @@ export default function Sidebar() {
                         >
                           <img src={el?.icon} alt="" />
                         </ListItemIcon>
-                        <Typography variant="button1">{el?.name}</Typography>
+                        <Typography
+                          variant="button1"
+                          className="truncate_1"
+                          sx={{ display: "block" }}
+                        >
+                          {el?.name}
+                        </Typography>
                       </ListItemButton>
                     </ListItem>
                   ))}
